@@ -1,5 +1,5 @@
 {
-    "name": "lbuchs/webauthn",
+    "name": "protonlabs/webauthn",
     "description": "A simple PHP WebAuthn (FIDO2) server library",
     "keywords": [
         "webauthn", "authentication"
