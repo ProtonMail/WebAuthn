@@ -345,6 +345,11 @@ class AuthenticatorData {
      */
     private function _readCredentialPublicKeyEDDSA(&$credPKey, $enc) {
         $credPKey->crv = $enc[self::$_COSE_CRV];
+
+        if (!isset($enc[self::$_COSE_X])) {
+            throw new WebAuthnException('missing public key', WebAuthnException::MISSING_PUBLIC_KEY);
+        }
+
         $credPKey->x   = $enc[self::$_COSE_X] instanceof ByteBuffer ? $enc[self::$_COSE_X]->getBinaryString() : null;
         unset ($enc);
 

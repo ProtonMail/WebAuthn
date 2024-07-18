@@ -22,6 +22,9 @@ class WebAuthnException extends \Exception {
     const CBOR = 15;
     const ANDROID_NOT_TRUSTED = 16;
 
+    // Custom error codes
+    const MISSING_PUBLIC_KEY = 100;
+
     public function __construct($message = "", $code = 0, $previous = null) {
         parent::__construct($message, $code, $previous);
     }
